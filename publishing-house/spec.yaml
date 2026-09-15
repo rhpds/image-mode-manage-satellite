@@ -140,7 +140,7 @@ approval_checklist:
   content:
     prerequisites_verifiable: false
     assessment_strategy: "Zero-Touch guided lab with per-module solve/validate playbooks. Validate playbooks confirm the bootc product and activation key exist, rhel2 is registered, the customized image is pushed to the Satellite registry, and rhel2 booted the new image (bootc status plus custom MOTD). Satellite Web UI and host terminals provide in-line visual confirmation."
-    catalog_gap: ""
+    catalog_gap: "RCARS returned the original zt-satellite-image-mode lab (98%) — the same content being migrated, so it is excluded. Among distinct catalog items, the closest are Satellite Basics (44%, covers activation keys/host registration/remote execution but not image mode) and Satellite Advanced Topics (37%). No existing catalog item covers the end-to-end Satellite-driven bootc image mode lifecycle — container repository setup, building/pushing a customized bootc image with Podman to the Satellite registry, and a Bootc Switch remote job to update and reboot the host — which is this lab's focus."
     design_overview: "A hands-on intermediate lab teaching how Red Hat Satellite 6.19 manages RHEL 10 image mode (bootc) hosts end to end. Learners configure a Satellite container repository and activation key, register an image mode host, then build, push, and roll out a customized bootc image via a Satellite remote job. The lab runs on three RHEL VMs (satellite.lab, rhel1.lab, rhel2.lab) in a per-student topology."
     module_summaries:
       - "Module 01 (Introduction): Introduces image mode/bootc and the three-host lab environment, then logs into the Satellite Web UI with provided admin credentials."
@@ -152,8 +152,23 @@ approval_checklist:
       - "Module 07 (Push Container Image): Logs in to the Satellite container registry from rhel1 and pushes the customized bootc image."
       - "Module 08 (Obtain Container Image Label): Navigates Satellite container image tags and lifecycle environments to record the published image label and Published At value."
       - "Module 09 (Schedule Remote Job): Schedules a Bootc Switch remote job targeting rhel2, verifies the staged image with bootc status, reboots, and confirms the new image and MOTD with rollback available."
-    rcars_overlap_pct: null
-    rcars_top_matches: []
+    rcars_overlap_pct: 44
+    rcars_top_matches:
+      - title: "Satellite Basics"
+        ci_name: "zt-rhelbu.zt-satellite-basics.prod"
+        url: "https://catalog.demo.redhat.com/catalog?item=zt-rhelbu.zt-satellite-basics.prod"
+        relevance_score: 44
+        why_it_fits: "Covers Satellite 6.19, activation keys, host registration, and remote execution, but not RHEL 10 image mode (bootc), building/pushing bootc images with Podman, or a container repository for image mode hosts."
+      - title: "Satellite Advanced Topics"
+        ci_name: "zt-rhelbu.zt-satellite-advanced-topics.prod"
+        url: "https://catalog.demo.redhat.com/catalog?item=zt-rhelbu.zt-satellite-advanced-topics.prod"
+        relevance_score: 37
+        why_it_fits: "Touches RHEL image mode (bootc) management within Satellite — container registry, activation keys, bootc image lifecycle, and Remote Execution — overlapping several workflows in this lab."
+      - title: "Building & Managing Self-contained Edge Appliances with Red Hat Image Mode and MicroShift"
+        ci_name: "published.edge-rhim-microshift.prod"
+        url: "https://catalog.demo.redhat.com/catalog?item=published.edge-rhim-microshift.prod"
+        relevance_score: 36
+        why_it_fits: "Covers RHEL image mode (bootc) and Podman-based image builds, but focuses on MicroShift and disconnected edge deployments rather than Red Hat Satellite integration."
     rejections: []
 
   infra:
