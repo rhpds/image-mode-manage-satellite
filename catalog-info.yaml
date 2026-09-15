@@ -1,0 +1,36 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: image-mode-manage-satellite
+  title: image-mode-manage-satellite
+  description: In this hands-on lab, you will configure Red Hat Satellite to
+    manage RHEL Image Mode Hosts.
+  annotations:
+    ph.rhdp.io/content-type: lab
+    ph.rhdp.io/deployment-mode: rhdp_published
+    ph.rhdp.io/github-user: nlager
+    ph.rhdp.io/owner: nlager@redhat.com
+    ph.rhdp.io/migrated-repo: https://github.com/rhpds/zt-satellite-image-mode.git
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: rhpds/image-mode-manage-satellite
+    ph.rhdp.io/created-at: 2026-09-15T18:51:14.946Z
+  tags:
+    - publishing-house
+    - lab
+    - rhdp-published
+    - migration
+  links:
+    - url: https://github.com/rhpds/image-mode-manage-satellite
+      title: Repository
+      icon: github
+    - url: https://devspaces.apps.ocpv-infra02.wdc07.infra.demo.redhat.com#https://github.com/rhpds/image-mode-manage-satellite
+      title: Open in DevSpaces
+      icon: catalog
+    - url: https://central-api-publishing-house.apps.ocpv-infra02.wdc07.infra.demo.redhat.com
+      title: Central
+      icon: dashboard
+spec:
+  type: content
+  lifecycle: experimental
+  owner: rhdp-team
+  system: publishing-house

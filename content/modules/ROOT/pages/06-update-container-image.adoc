@@ -1,0 +1,41 @@
+:imagesdir: ../assets/images
+
+== Update the container image
+
+The container image running on `+rhel2+` is based on the official
+`+registry.redhat.io/rhel10/rhel-bootc:10.1+` image. We want to modify
+that image. We’ll use the host `+rhel1+` to pull down the official
+image and customize it.
+
+NOTE: For the purposes of this lab, the rhel10/rhel-bootc:10.1 image is already present on the host `+rhel1+`. If you are not using the provided lab environment, you will need to pull the image down from the Red Hat Container Registry. You will have to log into the Red Hat Container Registry using your Red Hat account credentials using the `+podman login registry.redhat.io+` command.
+
+=====
+##Navigate to the `rhel1.lab terminal` tab##.
+
+Copy and run the script below.
+
+[source,bash,run]
+----
+cat <<'EOT' > Containerfile
+FROM registry.redhat.io/rhel10/rhel-bootc:10.1
+RUN printf '%s\n' '  _______' ' /       \' '|  o   o  |' '|    ^    |' '|  \___/  |' ' \_______/' > /etc/motd
+EOT
+----
+
+This modification will create a new message-of-the-day featuring a
+happy face, which will be displayed upon login.
+
+Next, let’s build the container from the ContainerFile with the command
+below.
+
+[source,bash,run]
+----
+podman build -f Containerfile -t satellite.lab/acme_org/bootc/rhel-bootc:satellite-image-mode-lab
+----
+
+The command we just ran, applies the tag
+`+satellite.lab/acme_org/bootc/rhel-bootc:satellite-image-mode-lab+` to
+our newly built container. The tag is the name assigned to the container
+image in the Satellite container registry.
+
+=====

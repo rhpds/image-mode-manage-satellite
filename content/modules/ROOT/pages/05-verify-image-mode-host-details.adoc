@@ -1,0 +1,90 @@
+:imagesdir: ../assets/images
+
+== Verify image mode host details in Satellite
+
+Let’s explore the image mode information available in Satellite.
+
+=====
+.View booted container images
+[%collapsible]
+====
+Navigate back to the Satellite Web UI.
+
+[arabic]
+1. Click on the "`Container images`" menu.
+
+.Booted container images
+image::container-images.png[]
+
+2. You will be able to see that one image mode host is detected.
+
+Click on the "`Booted`" tab.
+
+.Booted tab
+image::booted-container-images.png[]
+
+Next, under the "`Hosts`" column, click on number `1` link.
+
+.Hosts button
+image::container-images-host.png[]
+
+====
+=====
+
+=====
+.Update the container image status
+[%collapsible]
+====
+Next do the following.
+
+. Check the box for "`rhel2.lab`".
+. Select "`Schedule a Job`".
+
+.Schedule remote job
+image::runremotejobrhel2.png[../assets/runremotejobrhel2]
+
+Next we’ll create a job to check bootc status.
+
+. Select the "`Bootc`" job category.
+. Select "`Bootc Status - Script Default`".
+. Click "`Run on selected hosts`".
+
+.Run job wizard
+image::bootc-status-script-default.png[../assets/bootcstatusjob]
+
+You'll be taken to the "`Jobs`" menu for this job.
+
+Expand the job output, by clicking on the accordion button next to the server name `rhel2.lab`.
+
+Here you can see lots of information about the current status of the
+bootc system rhel2, including the image it was booted from.
+
+.Job status
+image::rhel2bootcstatusjob.png[../assets/rhel2bootcstatusjob]
+====
+=====
+
+=====
+.View image mode details
+[%collapsible]
+====
+Click on "`rhel2.lab`" to get to the host menu.
+
+.Click rhel2.lab
+image::getbacktorhel2.png[../assets/getbacktorhel2]
+
+Click on the details tab.
+
+.Details tab
+image::detailstab.png[../assets/detailstab]
+
+Scroll down to the "`Image mode details`" card.
+
+.Image mode details card
+image::runningimagehostsmenu.png[]
+
+Here you can also see the "`Running image`" details which we will need
+to use in the next step. This information is populated only after the
+bootc status job is run or approximately every 4 hours.
+====
+=====

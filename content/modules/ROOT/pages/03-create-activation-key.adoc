@@ -1,0 +1,53 @@
+:imagesdir: ../assets/images
+
+== Create an activation key for our image mode host
+
+In this lab environment, we have a ready-built image mode host named
+`+rhel2+`. We will generate an activation key and register `+rhel2+` to
+the Satellite server.
+
+=====
+
+Go to the Activation Keys menu.
+
+.Activation Keys
+image::activationkeys.png[../assets/activationkeys]
+
+Click "`Create Activation Key`".
+
+.Create Activation Key
+image::createactivationkey.png[../assets/createactivationkey]
+
+Do the following to create our activation key.
+
+. Name the key
+`+bootc+`.
+
+[source,js]
+----
+bootc
+----
+
+[arabic, start=2]
+. Click on "`Assign content view environments`".
+
+.Create activation key wizard
+image::new-activation-key.png[]
+
+In the "`Assign content view environments`" menu, do the following:
+
+. Click on "`Library`".
+. Select the "`Default Organization View`" Content View.
+. Click "`Save`".
+
+.Assign content view environments
+image::assign-content-view-environments.png[]
+
+You'll return to the "`New Activation Key`" menu.
+
+Click "`Save`".
+
+.New Activation Key - Save
+image::new-activation-key-save.png[]
+
+=====
