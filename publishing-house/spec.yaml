@@ -16,8 +16,8 @@ project:
   automation_type: "ansible"
   description: "In this hands-on lab, you will configure Red Hat Satellite to manage RHEL Image Mode Hosts."
   # content_reviewer_email and infra_reviewer_email are assigned by the RHDP team — not set by the author
-  jira_ticket: ""
-  workflow_id: ""
+  jira_ticket: "RHDPCD-1655"
+  workflow_id: "7d304ec5-2414-4a53-a98b-ca9d13a5bce6"
 
 spec:
   title: ""
