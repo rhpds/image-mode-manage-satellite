@@ -138,11 +138,20 @@ tracking:
 approval_checklist:
 
   content:
-    prerequisites_verifiable: null
-    assessment_strategy: ""
+    prerequisites_verifiable: false
+    assessment_strategy: "Zero-Touch guided lab with per-module solve/validate playbooks. Validate playbooks confirm the bootc product and activation key exist, rhel2 is registered, the customized image is pushed to the Satellite registry, and rhel2 booted the new image (bootc status plus custom MOTD). Satellite Web UI and host terminals provide in-line visual confirmation."
     catalog_gap: ""
-    design_overview: ""
-    module_summaries: []
+    design_overview: "A hands-on intermediate lab teaching how Red Hat Satellite 6.19 manages RHEL 10 image mode (bootc) hosts end to end. Learners configure a Satellite container repository and activation key, register an image mode host, then build, push, and roll out a customized bootc image via a Satellite remote job. The lab runs on three RHEL VMs (satellite.lab, rhel1.lab, rhel2.lab) in a per-student topology."
+    module_summaries:
+      - "Module 01 (Introduction): Introduces image mode/bootc and the three-host lab environment, then logs into the Satellite Web UI with provided admin credentials."
+      - "Module 02 (Create Container Repository): Creates a Satellite Product named bootc under Content > Products to store image mode container images."
+      - "Module 03 (Create Activation Key): Creates a bootc activation key assigned the Library / Default Organization View content view for registering the image mode host."
+      - "Module 04 (Register Image Mode Host): Uses hammer on the Satellite server to generate a registration command and runs it against rhel2 over SSH to register the host."
+      - "Module 05 (Verify Image Mode Host Details): Views booted container images, runs the Bootc Status remote job, and inspects rhel2's image mode details in Satellite."
+      - "Module 06 (Update Container Image): On rhel1, writes a Containerfile from rhel10/rhel-bootc:10.1 adding a custom MOTD and builds/tags the image with Podman."
+      - "Module 07 (Push Container Image): Logs in to the Satellite container registry from rhel1 and pushes the customized bootc image."
+      - "Module 08 (Obtain Container Image Label): Navigates Satellite container image tags and lifecycle environments to record the published image label and Published At value."
+      - "Module 09 (Schedule Remote Job): Schedules a Bootc Switch remote job targeting rhel2, verifies the staged image with bootc status, reboots, and confirms the new image and MOTD with rollback available."
     rcars_overlap_pct: null
     rcars_top_matches: []
     rejections: []
