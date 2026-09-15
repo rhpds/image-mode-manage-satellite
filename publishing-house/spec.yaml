@@ -20,12 +20,52 @@ project:
   workflow_id: "7d304ec5-2414-4a53-a98b-ca9d13a5bce6"
 
 spec:
-  title: ""
-  learning_objectives: []
-  modules: []              # [{id, title, duration_min}] — written by intake Phase 4; id is stable (e.g. module-01)
+  title: "Manage RHEL Image Mode Hosts with Red Hat Satellite"
+  learning_objectives:
+    - "Configure Red Hat Satellite with a container repository and an activation key to support image mode hosts."
+    - "Register a RHEL image mode host to Red Hat Satellite and verify its booted container image details."
+    - "Build and push a customized bootc container image to the Satellite container registry using Podman."
+    - "Manage an image mode host update by scheduling a Satellite remote job that switches and reboots the host into the new container image."
+  modules:                 # [{id, title, duration_min}] — written by intake Phase 4; id is stable (e.g. module-01)
+    - id: module-01
+      title: "Introduction"
+      duration_min: 5
+      status: not_started
+    - id: module-02
+      title: "Create Container Repository"
+      duration_min: 3
+      status: not_started
+    - id: module-03
+      title: "Create Activation Key"
+      duration_min: 4
+      status: not_started
+    - id: module-04
+      title: "Register Image Mode Host"
+      duration_min: 5
+      status: not_started
+    - id: module-05
+      title: "Verify Image Mode Host Details"
+      duration_min: 5
+      status: not_started
+    - id: module-06
+      title: "Update Container Image"
+      duration_min: 6
+      status: not_started
+    - id: module-07
+      title: "Push Container Image"
+      duration_min: 3
+      status: not_started
+    - id: module-08
+      title: "Obtain Container Image Label"
+      duration_min: 3
+      status: not_started
+    - id: module-09
+      title: "Schedule Remote Job"
+      duration_min: 8
+      status: not_started
   environment:
-    platform: ""               # ocp | rhel-vms — determines which sizing fields apply
-    topology: ""               # shared-cluster | per-student | cnv-pool
+    platform: "rhel-vms"       # ocp | rhel-vms — determines which sizing fields apply
+    topology: "per-student"    # shared-cluster | per-student | cnv-pool
     cloud_provider: cnv        # cnv | aws — cnv is default
     max_concurrent_users: null # required if topology = shared-cluster
 
@@ -42,21 +82,40 @@ spec:
 
     # --- VM-specific fields (only when platform = rhel-vms) ---
     # Each entry: {role, count, cpu, ram_gb, disk_gb, os}
-    vms_per_student: []
+    vms_per_student:
+      - role: "satellite.lab (Red Hat Satellite 6.19 server)"
+        count: 1
+        cpu: 4
+        ram_gb: 20
+        disk_gb: 200
+        os: "RHEL 10"
+      - role: "rhel1.lab (image build host)"
+        count: 1
+        cpu: 2
+        ram_gb: 4
+        disk_gb: 50
+        os: "RHEL 10"
+      - role: "rhel2.lab (image mode host)"
+        count: 1
+        cpu: 2
+        ram_gb: 4
+        disk_gb: 50
+        os: "RHEL 10"
 
     # --- Common fields (both platforms) ---
     aap_version: ""                    # required if AAP in products
-    ai_requirement: ""                 # maas | gpu | none
+    ai_requirement: "none"             # maas | gpu | none
     ai_model_tier: ""                  # open-source | frontier (if ai_requirement = maas or gpu)
     ai_model_name: ""                  # specific model e.g. granite-3.1-8b
     ai_justification: ""               # required if ai_model_tier = frontier or ai_requirement = gpu
     non_ga_products: []                # list of non-GA products/versions
     non_ga_access_plan: ""             # how access is provided for non-GA products
-    external_services: []              # named external service dependencies e.g. [github.com]
+    external_services:                 # named external service dependencies e.g. [github.com]
+      - "registry.redhat.io"
     gpu_nodes: 0                       # number of GPU nodes (0 = none)
     gpu_type: ""                       # e.g. NVIDIA A100 40GB (required if gpu_nodes > 0)
-  duration_hours: null
-  audience: ""               # beginner | intermediate | advanced
+  duration_hours: 0.75
+  audience: "intermediate"   # beginner | intermediate | advanced
 
 development:
   automation:
