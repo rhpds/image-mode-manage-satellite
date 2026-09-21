@@ -3,31 +3,31 @@ antora:
   name: modules
   dir: www
   modules:
-    - name: "01-introduction"
+    - name: 01-introduction
       label: "Introduction"
       solveButton: true
-    - name: "02-create-container-repository"
+    - name: 02-create-container-repository
       label: "Create Container Repository"
       solveButton: true
-    - name: "03-create-activation-key"
+    - name: 03-create-activation-key
       label: "Create Activation Key"
       solveButton: true
-    - name: "04-register-image-mode-host"
+    - name: 04-register-image-mode-host
       label: "Register Image Mode Host"
       solveButton: true
-    - name: "05-verify-image-mode-host-details"
+    - name: 05-verify-image-mode-host-details
       label: "Verify Image Mode Host Details"
       solveButton: true
-    - name: "06-update-container-image"
+    - name: 06-update-container-image
       label: "Update Container Image"
       solveButton: true
-    - name: "07-push-container-image"
+    - name: 07-push-container-image
       label: "Push Container Image"
       solveButton: true
-    - name: "08-obtain-container-image-label"
+    - name: 08-obtain-container-image-label
       label: "Obtain Container Image Label"
       solveButton: true
-    - name: "09-schedule-remote-job"
+    - name: 09-schedule-remote-job
       label: "Schedule Remote Job"
       solveButton: true
 
