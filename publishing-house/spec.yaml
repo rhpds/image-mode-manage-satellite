@@ -50,7 +50,7 @@ spec:
     - id: module-06
       title: "Update Container Image"
       duration_min: 6
-      status: not_started
+      status: complete
     - id: module-07
       title: "Push Container Image"
       duration_min: 3
