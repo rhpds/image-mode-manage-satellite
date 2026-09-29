@@ -62,7 +62,7 @@ spec:
     - id: module-09
       title: "Schedule Remote Job"
       duration_min: 8
-      status: not_started
+      status: complete
   environment:
     platform: "rhel-vms"       # ocp | rhel-vms — determines which sizing fields apply
     topology: "per-student"    # shared-cluster | per-student | cnv-pool
