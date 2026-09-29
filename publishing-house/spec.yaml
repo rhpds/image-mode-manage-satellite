@@ -46,7 +46,7 @@ spec:
     - id: module-05
       title: "Verify Image Mode Host Details"
       duration_min: 5
-      status: not_started
+      status: complete
     - id: module-06
       title: "Update Container Image"
       duration_min: 6
