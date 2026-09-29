@@ -38,7 +38,7 @@ spec:
     - id: module-03
       title: "Create Activation Key"
       duration_min: 4
-      status: not_started
+      status: complete
     - id: module-04
       title: "Register Image Mode Host"
       duration_min: 5
