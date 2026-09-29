@@ -34,7 +34,7 @@ spec:
     - id: module-02
       title: "Create Container Repository"
       duration_min: 3
-      status: not_started
+      status: complete
     - id: module-03
       title: "Create Activation Key"
       duration_min: 4
