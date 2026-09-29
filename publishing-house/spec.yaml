@@ -54,7 +54,7 @@ spec:
     - id: module-07
       title: "Push Container Image"
       duration_min: 3
-      status: not_started
+      status: complete
     - id: module-08
       title: "Obtain Container Image Label"
       duration_min: 3
