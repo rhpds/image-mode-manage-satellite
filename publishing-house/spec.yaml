@@ -42,7 +42,7 @@ spec:
     - id: module-04
       title: "Register Image Mode Host"
       duration_min: 5
-      status: not_started
+      status: complete
     - id: module-05
       title: "Verify Image Mode Host Details"
       duration_min: 5
