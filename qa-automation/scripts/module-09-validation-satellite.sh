@@ -5,7 +5,8 @@ echo "Validating 09-schedule-remote-job" >> /tmp/progress.log
 sleep 15
 
 # Check if a Bootc switch job was created for rhel2.lab by finding recent jobs
-JOB_ID=$(hammer --output json job-invocation list --search "host = rhel2.lab" --order "id DESC" --per-page 5 2>/dev/null | jq -r '.[] | select(.["Job template"] | contains("Bootc")) | .Id' | head -1)
+# Look for "bootc switch" in the Description field (note: lowercase "bootc")
+JOB_ID=$(hammer --output json job-invocation list --search "host = rhel2.lab" --order "id DESC" --per-page 5 2>/dev/null | jq -r '.[] | select(.Description | contains("bootc switch")) | .ID' | head -1)
 
 if [ -z "$JOB_ID" ]; then
     fail_validation <<EOF
