@@ -12,13 +12,13 @@
   hosts: localhost
   gather_facts: false
   tasks:
-    - name: Add satellite host
+    - name: Add bastion host
       ansible.builtin.add_host:
-        name: satellite
-        ansible_ssh_host: satellite
+        name: "{{ lookup('ansible.builtin.env', 'BASTION_HOST') }}"
+        ansible_ssh_host: "{{ lookup('ansible.builtin.env', 'BASTION_HOST') }}"
         ansible_ssh_port: "{{ lookup('ansible.builtin.env', 'BASTION_PORT') }}"
-        ansible_ssh_user: "{{ lookup('ansible.builtin.env', 'ANSIBLE_USER') }}"
-        ansible_ssh_pass: "{{ lookup('ansible.builtin.env', 'ANSIBLE_PASSWORD') }}"
+        ansible_ssh_user: "{{ lookup('ansible.builtin.env', 'BASTION_USER') }}"
+        ansible_ssh_pass: "{{ lookup('ansible.builtin.env', 'BASTION_PASSWORD') }}"
 
 - name: E2E - run scripts in order
   hosts: all:!localhost
