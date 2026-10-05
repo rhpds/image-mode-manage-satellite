@@ -1,12 +1,7 @@
 ---
 # E2E — End-to-end test
-# Runs the qa-automation/scripts shell scripts against the satellite VM, in a
+# Runs the qa-automation/scripts shell scripts against the bastion host, in a
 # fixed order. Fails on the first broken script.
-#
-# The showroom runner container has direct SSH access to the VMs in its own
-# namespace (reachable by their Service name via cluster DNS) and is given
-# ANSIBLE_USER/ANSIBLE_PASSWORD for auth — it does not receive BASTION_HOST
-# (that's only injected into the setup init container).
 
 - name: Build inventory
   hosts: localhost
