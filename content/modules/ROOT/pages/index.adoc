@@ -1,0 +1,49 @@
+:imagesdir: ../assets/images
+
+= Manage RHEL Image Mode Hosts with Red Hat Satellite
+
+Red Hat Enterprise Linux image mode packages the operating system as a bootable container image. That means you can use the same container tools you already know — Podman, Containerfiles, and a registry — to build, version, and roll out OS updates at scale.
+
+Red Hat Satellite 6.19 adds the management layer. It provides the container registry, host registration, and remote execution needed to operate image mode hosts the same way you manage traditional RHEL systems today.
+
+In this lab, you'll walk through the full lifecycle: configure Satellite to support image mode hosts, register a RHEL 10 image mode host, build and push a customized bootc image, and drive an update using a Satellite remote job.
+
+== What you'll learn
+
+* Configure Red Hat Satellite with a container repository and an activation key to support image mode hosts.
+* Register a RHEL image mode host to Red Hat Satellite and verify its booted container image details.
+* Build and push a customized bootc container image to the Satellite container registry using Podman.
+* Manage an image mode host update by scheduling a Satellite remote job that switches and reboots the host into the new container image.
+
+== Lab modules
+
+[cols="1,3,1",options="header"]
+|===
+| Module | Title | Duration
+
+| 01 | Introduction | 5 min
+| 02 | Create Container Repository | 3 min
+| 03 | Create Activation Key | 4 min
+| 04 | Register Image Mode Host | 5 min
+| 05 | Verify Image Mode Host Details | 5 min
+| 06 | Update Container Image | 6 min
+| 07 | Push Container Image | 3 min
+| 08 | Obtain Container Image Label | 3 min
+| 09 | Schedule Remote Job | 8 min
+|===
+
+*Total estimated time: 45 minutes.*
+
+== Lab environment
+
+Your lab environment includes three pre-provisioned hosts:
+
+* *satellite.lab* — Red Hat Satellite 6.19 server. Pre-installed and ready. Admin credentials are provided in the lab.
+* *rhel1.lab* — RHEL 10 build host. The `rhel10/rhel-bootc:10.1` base image is pre-pulled and ready for you to customize.
+* *rhel2.lab* — RHEL 10 image mode host. You'll register this host to Satellite and later update it to a new image.
+
+Access to all three hosts is available through the wetty SSH terminals and the Satellite Web UI tab in your lab environment.
+
+== Get started
+
+Click *Next* to begin with the Introduction module.
