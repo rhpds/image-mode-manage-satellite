@@ -1,0 +1,45 @@
+:imagesdir: ../assets/images
+
+== Conclusion
+
+You've completed the Manage RHEL Image Mode Hosts with Red Hat Satellite lab.
+
+Over nine modules, you configured Red Hat Satellite as the control plane for RHEL 10 image mode hosts. You built a customized bootc image from scratch, pushed it to the Satellite container registry, and drove the update to a live host using a Satellite remote job. That's the full lifecycle — initial setup through an OS update — without touching a package manager on the managed host.
+
+== What You've Learned
+
+* Configure Red Hat Satellite with a container repository and an activation key to support image mode hosts.
+* Register a RHEL image mode host to Red Hat Satellite and verify its booted container image details.
+* Build and push a customized bootc container image to the Satellite container registry using Podman.
+* Manage an image mode host update by scheduling a Satellite remote job that switches and reboots the host into the new container image.
+
+== Next Steps
+
+To go further with Red Hat Satellite and RHEL image mode, try these:
+
+* Add packages or configure services in your Containerfile. Push the result and roll out the update the same way you did in Module 09. The workflow is identical regardless of what the image contains.
+* Explore Satellite content views and lifecycle environments to control which image versions reach which hosts.
+* Look at the *Satellite Basics* lab to go deeper on host registration, activation keys, and remote execution.
+* Check out *Satellite Advanced Topics* for more advanced content lifecycle management workflows.
+* The *Building & Managing Self-contained Edge Appliances with Red Hat Image Mode and MicroShift* lab takes bootc into disconnected edge deployments using a different management approach.
+
+== References
+
+=== Red Hat Documentation
+
+* https://docs.redhat.com/en/documentation/red_hat_satellite/6.19[Red Hat Satellite 6.19 Documentation]
+* https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/using_image_mode_for_rhel_to_build_deploy_and_manage_operating_systems[Using Image Mode for RHEL to Build, Deploy, and Manage Operating Systems — RHEL 10]
+* https://docs.redhat.com/en/documentation/red_hat_satellite/6.19/html/managing_hosts/registering-hosts-and-setting-up-host-integration_managing-hosts[Registering Hosts and Setting Up Host Integration — Red Hat Satellite 6.19]
+* https://docs.redhat.com/en/documentation/red_hat_satellite/6.19/html/managing_hosts/using_satellite_hammer_cli_for_host_management_managing-hosts[Using the Satellite Hammer CLI for Host Management — Red Hat Satellite 6.19]
+* https://docs.redhat.com/en/documentation/red_hat_satellite/6.19/html/managing_content/managing_container_images_content-management[Managing Container Images — Red Hat Satellite 6.19]
+
+=== Project Resources
+
+* https://containers.github.io/bootc/[bootc — Bootable Containers Project]
+* https://docs.podman.io/[Podman Documentation]
+
+=== Related Labs
+
+* https://catalog.demo.redhat.com/catalog?item=zt-rhelbu.zt-satellite-basics.prod[Satellite Basics — RHDP Catalog]
+* https://catalog.demo.redhat.com/catalog?item=zt-rhelbu.zt-satellite-advanced-topics.prod[Satellite Advanced Topics — RHDP Catalog]
+* https://catalog.demo.redhat.com/catalog?item=published.edge-rhim-microshift.prod[Building & Managing Self-contained Edge Appliances with Red Hat Image Mode and MicroShift — RHDP Catalog]

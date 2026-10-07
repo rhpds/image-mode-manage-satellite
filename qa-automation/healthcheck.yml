@@ -1,5 +1,5 @@
 ---
-# HEALTHCHECK — Quick environment readiness check (migrated ZT Guided content)
+# HEALTHCHECK — Quick environment readiness check
 # Verifies the bastion host is reachable via SSH. Non-destructive: does not
 # modify any lab state. Should complete in under 60 seconds.
 #
